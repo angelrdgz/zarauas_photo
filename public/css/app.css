@@ -11005,3 +11005,31 @@ html body #gallery .container .gridBox img {
   margin-bottom: 10px;
 }
 
+@media (max-width: 1200px) {
+  html body #gallery .container .gridBox {
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+
+@media (max-width: 1000px) {
+  html body #gallery .container .gridBox {
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  html body #gallery .container .gridBox {
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  html body #gallery .container .gridBox {
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+}
+

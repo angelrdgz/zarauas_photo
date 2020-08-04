@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZARAZUA'S PHOTO</title>
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
@@ -64,31 +65,39 @@
                     <h1 class="title text-center">Titulo del Album</h1>
                 </div>
                 <div class="col-sm-12 gridBox">
-                    <img src="{{ asset('images/1.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/4.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/1.jpg') }}" alt="">
-                    <img src="{{ asset('images/4.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/2.jpg') }}" alt="">
-                    <img src="{{ asset('images/1.jpg') }}" alt="">
-                    <img src="{{ asset('images/3.jpg') }}" alt="">
-                    <img src="{{ asset('images/1.jpg') }}" alt="">
+                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/4.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/4.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/4.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/4.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
+                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
                 </div>
             </div>
         </div>
     </div>
     <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/lightbox.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
+        $(document).ready(function() {
+
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true
+            })
+        });
     </script>
 </body>
 

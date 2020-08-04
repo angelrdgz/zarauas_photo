@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;
 
-400;700&display=swap);@charset "UTF-8";
+400;700&display=swap);@import url(https://fonts.googleapis.com/css2?family=Parisienne&family=Sacramento&family=Satisfy&display=swap);@charset "UTF-8";
 
 :root {
   --blue: #3490dc;
@@ -10970,5 +10970,38 @@ html body #main .container .title {
   color: #4fbddf;
   font-size: 80px;
   font-weight: bolder;
+}
+
+html body #gallery {
+  width: 100%;
+  height: auto;
+  background: url("/images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+html body #gallery .container .title {
+  color: #fff;
+  font-size: 38px;
+  font-weight: bolder;
+  font-family: "Parisienne", cursive;
+  font-family: "Sacramento", cursive;
+  font-family: "Satisfy", cursive;
+}
+
+html body #gallery .container .gridBox {
+  line-height: 0;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 4;
+  -moz-column-gap: 0px;
+  column-count: 4;
+  column-gap: 0px;
+}
+
+html body #gallery .container .gridBox img {
+  width: 100% !important;
+  height: auto !important;
+  padding: 0 5px;
+  margin-bottom: 10px;
 }
 

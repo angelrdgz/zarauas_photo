@@ -87,7 +87,7 @@
                     <span>Usuarios</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('admin/configuraciones') }}">
+                <a class="nav-link" href="{{ url('admin/configuracion') }}">
                     <i class="fas fa-cogs"></i>
                     <span>Configuraciones</span></a>
             </li>

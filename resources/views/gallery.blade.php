@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZARAZUA'S PHOTO</title>
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('css/all.css') }}">
     <link rel="stylesheet" href="{{ asset('css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -61,28 +62,19 @@
     <div id="gallery" class="bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url('/images/background.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 my-4">
-                    <h1 class="title text-center">Titulo del Album</h1>
+                <div class="col-xs-4 col-sm-4 col-md-4 d-flex align-items-center">
+                    <a href="{{ url('/') }}" class="btn btn-link text-white">
+                        <i class="fal fa-arrow-circle-left fa-lg mr-2"></i>
+                        <span class="float-right d-none d-sm-block">Regresar</span>
+                    </a>
+                </div>
+                <div class="col-xs-8 col-sm-4 col-md-4 my-4">
+                    <h1 class="title text-center">{{ $album->name }}</h1>
                 </div>
                 <div class="col-sm-12 gridBox">
-                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/4.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/4.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/4.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/4.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/2.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/2.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/3.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/3.jpg') }}" alt=""></a>
-                    <a href="{{ asset('images/1.jpg') }}" data-lightbox="gallery"><img src="{{ asset('images/1.jpg') }}" alt=""></a>
+                    @foreach($album->photos as $photo)
+                    <a href="{{ asset('images/albums/'.$album->id.'/photos/'.$photo->filename) }}" data-lightbox="gallery"><img src="{{ asset('images/albums/'.$album->id.'/photos/'.$photo->filename) }}" alt=""></a>
+                    @endforeach
                 </div>
             </div>
         </div>

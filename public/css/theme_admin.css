@@ -10173,12 +10173,12 @@
     cursor: pointer;
   }
   
-  .sidebar #sidebarToggle::after {
+  /*.sidebar #sidebarToggle::after {
     font-weight: 900;
-    content: '\f104';
+    content: '\f053';
     font-family: 'Font Awesome 5 Free';
     margin-right: 0.1rem;
-  }
+  }*/
   
   .sidebar #sidebarToggle:hover {
     text-decoration: none;
@@ -10194,9 +10194,13 @@
   }
   
   .sidebar.toggled #sidebarToggle::after {
-    content: '\f105';
+    /*content: '\f105';
     font-family: 'Font Awesome 5 Free';
-    margin-left: 0.25rem;
+    margin-left: 0.25rem;*/
+  }
+
+  .sidebar.toggled #sidebarToggle i{
+    transform: rotate(180deg);
   }
   
   .sidebar .sidebar-brand {

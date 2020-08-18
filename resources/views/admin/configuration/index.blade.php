@@ -50,13 +50,9 @@
                                         <div class="col-sm-12">
                                             @foreach($configuration->photos as $photo)
                                             <div class="previewBox">
-                                                <form method="post" class="delete d-flex justify-content-center align-items-center" action="{{ url('admin/configuracion/'.$configuration->id.'/fotos/'.$photo->id) }}">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button class="delete-icon border-0" type="submit">
-                                                        <i class="far fa-trash-alt"></i>
-                                                    </button>
-                                                </form>
+                                                <a class="deleteConfigPhoto delete-icon border-0 d-flex justify-content-center align-items-center" data-url="{{ url('admin/configuracion/'.$configuration->id.'/fotos/'.$photo->id) }}">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
                                                 <div class="previewImage">
                                                     <img src="{{ asset('images/configuration/covers/1/'.$photo->filename) }}" alt="">
                                                 </div>
@@ -87,6 +83,29 @@
 @section('scripts')
 <script>
     let auxZone = false;
+
+    $(document).on('click', '.deleteConfigPhoto', function() {
+        let box = $(this).closest('.previewBox')
+        let question = confirm("¿Estas seguro de eliminar?");
+        if (question) {
+            $.ajax({
+                url: $(this).data('url'),
+                method: "POST",
+                async: true,
+                data: {
+                    _method: "DELETE",
+                    _token: "{{csrf_token()}}",
+                },
+                success: function(data) {
+                    console.log(data);
+                    box.fadeOut('slow');
+                },
+                error: function(msg) {
+                    console.error(msg);
+                }
+            })
+        }
+    })
 
     $(document).on('click', '.nav-tabs .nav-item', function() {
         if ($(this).index() == 1 && auxZone == false) {
